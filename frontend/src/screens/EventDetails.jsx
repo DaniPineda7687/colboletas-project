@@ -1,13 +1,11 @@
-import { useEffect } from "react";
-import { useContext } from "react";
-import { useState } from "react";
+import { useEffect,useContext,useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import { AppContext } from "../AppContext";
 import AddFavoriteButton from "../components/AddFavoriteButton";
 import NavBar from "../components/NavBar";
 import PreviousButton from "../components/PreviousButton";
 import { axiosInstance } from "../utils/axiosInstance";
-import { getPaymentRef } from "../utils/helpers";
 import "./EventDetail.css"
 const EventDetails=()=>{
     const months = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
@@ -83,6 +81,10 @@ const EventDetails=()=>{
                 navigate("/tickets");
             }else{
                 //MENSAJE DE ERROR - REINTENTAR PAGO
+                toast("Error en la transacción, por favor intentelo nuevamente",{
+                    type:toast.TYPE.ERROR,
+                    autoClose:4000,
+                });
             }
           })
     }
