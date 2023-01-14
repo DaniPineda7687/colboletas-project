@@ -1,0 +1,22 @@
+.search-bar-container{
+    margin-bottom: 1.6rem;
+}
+.input-search{
+    width: 100%;
+    padding: 1.6rem 1.6rem 1.6rem 3.6rem;
+    outline: none;
+    border: 1px solid #B6B6C0;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+}
+.input-search-container{
+    position: relative;
+}
+.icon-search{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 10px;
+    top: calc(50% - 10px);
+    font-size: 1.6rem;
+}

@@ -1,0 +1,51 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; 
+}
+
+html{
+  font-family: 'Urbanist', sans-serif;
+  font-size: 62.5%;
+}
+a{
+  text-decoration: none;
+  color: #000000;
+}
+
+li{
+  list-style: none;
+}
+img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.main-container{
+  margin: 2.4rem 2.4rem 6rem 2.4rem;
+}
+.title-secondary{
+  color: #131313;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.header-section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.link-section{
+  color: #2D4BD1;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.section-title{
+  color: #131313;
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.section-title-mod{
+  margin-bottom: 2rem;
+}

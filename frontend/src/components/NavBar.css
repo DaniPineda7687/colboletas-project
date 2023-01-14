@@ -1,0 +1,22 @@
+.header-container{
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    background-color: #ffffff;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px -9px 7px -4px rgba(0,0,0,0.1);
+}
+.navbar-container{
+    width: 100%;
+}
+.nav-list-container{
+    display: flex;
+    justify-content: space-around;
+}
+.nav-list-container li a{
+    font-size: 2rem;
+    color: #2D4BD1;
+}
