@@ -1,10 +1,36 @@
 .ticket-header-container,
 .ticket-body-container,
 .ticket-footer-container{
-    background-color: #2d4bd1;
     padding: 1.6rem;
     border-radius: 20px;
     border: 1px dotted #ffffff;
+}
+.ticket-header-container{
+    position: relative;
+    overflow: hidden;
+}
+.ticket-body-container{
+    height: 240px;
+}
+.ticket-claimed.ticket-header-container::after{
+    position: absolute;
+    content: "RECLAMADO";
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    top: 30px; 
+    right: -20px;
+    transform: rotate(45deg);
+    z-index: 100;
+    width: 120px;
+    height: auto;
+    background-color: red;
+}
+.ticket-not-claimed{
+    background-color: #2d4bd1;
+}
+.ticket-claimed{
+    background-color: #ff8c00;
 }
 
 .header-image{
@@ -62,4 +88,7 @@
     align-items: center;
     gap: .8rem;
     height: 150px;
+}
+.ticket-none-display{
+    display: none;
 }

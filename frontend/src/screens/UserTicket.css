@@ -3,6 +3,7 @@
     display: flex;
     overflow-y: scroll;
     scroll-behavior: smooth;
+    gap: 20px;
 }
 .tickets-user-container::-webkit-scrollbar {
     display: none;
@@ -10,10 +11,31 @@
 .ticket-main-container{
     color: #ffffff;
     margin-bottom: 10px;
-    margin-right: 10px;
     display: grid;
-    grid-template-rows: 250px 220px max-content;
+    grid-template-rows: 250px max-content max-content;
     min-width: 320px;
     max-width: 360px;
 }
 
+.ticket-filter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: max-content;
+    height: 32px;
+    padding: .4rem 1.6rem;
+    border: 1px solid #B6B6C0;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.tickets-filters-container{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+}
+.filter-selected{
+    background-color: #2D4BD1;
+    color: #ffffff;
+}

@@ -24,7 +24,6 @@ const UserInfo=()=>{
     
         }
     ]
-    console.log(userInfo);
     useEffect(()=>{
         dispatch({type:"USER_LOGIN", payload:{userData:userInfo}})
     },[])

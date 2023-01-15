@@ -10,6 +10,7 @@ const UserTickets=()=>{
     const{state, dispatch}=useContext(AppContext);
     const[ticketsBuy, setTicketsBuy]=useState([]);
     const[infoEventsUser, setInfoEventsUser]=useState([]);
+    const[filter, setFilter]=useState("all");
     const{userData}=state;  
     const getPurchasesUser=async()=>{
         const{data}= await axiosInstance.get(`payments/user/${userData[0]._id}`);
@@ -24,12 +25,23 @@ const UserTickets=()=>{
     
     useEffect(()=>{
         getPurchasesUser();
-    },[])
+    },[state])
     return(
         <>
             <NavBar value={"tickets"}/>
             <div className="main-container">
                 <p className="section-title section-title-mod">Tus tickets</p>
+                <div className="tickets-filters-container">
+                    <div className={`all-tickets ticket-filter ${filter==="all" ? "filter-selected":""}`} onClick={()=>setFilter("all")}>
+                        <p>Todos</p>
+                    </div>
+                    <div className={`not-claimed-tickets ticket-filter ${filter==="claimed" ? "filter-selected":""}`} onClick={()=>setFilter("claimed")}>
+                        <p>Reclamados</p>
+                    </div>
+                    <div className={`claimed-tickets ticket-filter ${filter==="not-claimed" ? "filter-selected":""}`} onClick={()=>setFilter("not-claimed")}>
+                        <p>Sin reclamar</p>
+                    </div>
+                </div>
                 {
                     infoEventsUser.length>0
                     ?
@@ -37,16 +49,14 @@ const UserTickets=()=>{
                         {
                             infoEventsUser.map((event,index)=>{
                                 return(
-                                    <>
-                                        <TicketEvent event={event} userData={userData} ticketsBuy={ticketsBuy} index={index}/>  
-                                    </>
+                                    <TicketEvent key={event._id} event={event} userData={userData} ticketsBuy={ticketsBuy} index={index} claimed={ticketsBuy[index].claimed} filter={filter}/>  
                                 )
                             })
                         }
                         
                     </div>
                     :
-                    <p>No tienes tickets en tu cuenta</p>
+                    <h1>No tienes tickets en tu cuenta</h1>
                 }
             </div>
         </>

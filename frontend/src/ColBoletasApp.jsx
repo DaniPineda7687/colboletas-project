@@ -6,6 +6,7 @@ import HomeScreen from './screens/HomeScreen'
 import FavoritesScreen from './screens/FavoritesScreen'
 import EventDetails from './screens/EventDetails'
 import UserTickets from './screens/UserTickets'
+import CodeQRReader from './screens/CodeQRReader'
 const ColBoletasApp=()=>{
     return(
         <BrowserRouter>
@@ -18,6 +19,7 @@ const ColBoletasApp=()=>{
                 <Route path='/event/:idEvent' element={<EventDetails/>}/>
 
                 <Route path='/tickets' element={<UserTickets/>}/>
+                <Route path='/admin/scanner' element={<CodeQRReader/>}/>
             </Routes>
         </BrowserRouter>
     );
