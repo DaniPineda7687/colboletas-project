@@ -3,9 +3,15 @@ import QrReader from "react-web-qr-reader";
 import { axiosInstance } from "../utils/axiosInstance";
 import "./CodeQRReader.css";
 import {toast} from "react-toastify"
+import { useEffect } from "react";
+import { useContext } from "react";
+import { AppContext } from "../AppContext";
+import {useNavigate} from "react-router-dom"
+import NavBarAdmin from "../components/NavBarAdmin";
 const CodeQRReader=()=>{
     const delay = 500;
-
+    const{state,dispatch}=useContext(AppContext)
+    const navigate = useNavigate();
     const previewStyle = {
         height: 240,
         width: 320,
@@ -63,8 +69,17 @@ const CodeQRReader=()=>{
             })           
         }
     }   
+    useEffect(()=>{
+        if(state.userData.length===0){
+            navigate("/")
+        }else if(state.userData[0].isAdmin===false){
+            navigate("/")
+        }
+        
+    })
     return(
         <>
+        <NavBarAdmin/>
             <div className="main-container">
                 <p className="section-title title-admin">Lector de tickets</p>
                 <div className="qr-reader-container">

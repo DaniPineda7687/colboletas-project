@@ -24,7 +24,6 @@ const EventDetails=()=>{
                 paymentRef,
                 paymentId
         })
-        console.log(data)
     }
 
     const getEventById = async() =>{
@@ -59,34 +58,41 @@ const EventDetails=()=>{
         setViewMap(false);
     }
     const handlerPayTicket=()=>{
-        const timePayment = new Date().getTime();
-        const checkout = new WidgetCheckout({
-            currency: 'COP',
-            amountInCents: eventUser.ticketPrice*100,
-            reference: `${eventUser._id}${timePayment}`,
-            publicKey: 'pub_test_4TTfBWI9mfxQeBIwun5ly2ObT5SWWe9v',
-            })
-          checkout.open(function ( result ) {
-            var transaction = result.transaction
-            if(transaction.status==="APPROVED"){
-                //GUARDAR EL ID DE LA COMPRA Y DEL EVENTO EN EL CONTEXTO
-                dispatch({type:"ADD_PURCHASE",payload:{purchase:{
-                    userId:state.userData[0]._id,
-                    eventId:eventUser._id,
-                    paymentRef:transaction.reference,
-                    paymentId:transaction.id,
-                }}})
-                //GUARDAR LO ANTERIOR EN UN ESQUEMA DE LA BD DE COMPRAS
-                postPayment(state.userData[0]._id,eventUser._id,transaction.reference,transaction.id);
-                navigate("/tickets");
-            }else{
-                //MENSAJE DE ERROR - REINTENTAR PAGO
-                toast("Error en la transacción, por favor intentelo nuevamente",{
-                    type:toast.TYPE.ERROR,
-                    autoClose:4000,
-                });
-            }
-          })
+        if(state.userData.length>0){
+            const timePayment = new Date().getTime();
+            const checkout = new WidgetCheckout({
+                currency: 'COP',
+                amountInCents: eventUser.ticketPrice*100,
+                reference: `${eventUser._id}${timePayment}`,
+                publicKey: 'pub_test_4TTfBWI9mfxQeBIwun5ly2ObT5SWWe9v',
+                })
+              checkout.open(function ( result ) {
+                var transaction = result.transaction
+                if(transaction.status==="APPROVED"){
+                    //GUARDAR LO ANTERIOR EN UN ESQUEMA DE LA BD DE COMPRAS
+                    postPayment(state.userData[0]._id,eventUser._id,transaction.reference,transaction.id);
+                    navigate("/tickets");
+                }else{
+                    //MENSAJE DE ERROR - REINTENTAR PAGO
+                    toast("Error en la transacción, por favor intentelo nuevamente",{
+                        type:toast.TYPE.ERROR,
+                        autoClose:4000,
+                    });
+                }
+              })
+        }else{
+            //Error debe iniciar sesion
+            navigate("/login")
+            toast("Debe iniciar sesion para continuar con la compra",{
+                type:"error",
+                position:"bottom-center",
+                closeButton:true,
+                autoClose:6000,
+                hideProgressBar:false,
+                toastId:"ticket_claimed",
+            })   
+        }
+
     }
     useEffect(()=>{
         getEventById();

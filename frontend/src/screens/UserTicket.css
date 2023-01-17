@@ -13,7 +13,7 @@
     margin-bottom: 10px;
     display: grid;
     grid-template-rows: 250px max-content max-content;
-    min-width: 320px;
+    min-width: 100%;
     max-width: 360px;
 }
 

@@ -7,8 +7,7 @@ export const AppContext = createContext();
 export const AppProvider=({children})=>{
     let initialState={
         favorites:[],
-        purchases:[],
-        userData:[],
+        userData:[],    
     }
     if(localStorage.getItem("userInfo")){
         initialState=JSON.parse(localStorage.getItem("userInfo"))

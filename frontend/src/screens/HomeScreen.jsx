@@ -8,6 +8,8 @@ import SearchEvent from "../components/SearchEvent";
 import UserInfo from "../components/UserInfo";
 
 const HomeScreen=()=>{
+
+    const{state,dispatch}=useContext(AppContext);
     return(
         <div>
             <NavBar/>

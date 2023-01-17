@@ -7,6 +7,7 @@ import cors from "cors";
 import CategoryRouter from "./routes/CategoryRoutes.js";
 import PaymentRoutes from "./routes/PaymentRoutes.js";
 import bodyParser from "body-parser";
+import UserRouter from "./routes/UserRoutes.js";
 dotenv.config();
 mongoose.connect(process.env.ATLAS_URI)
     .then(()=>{
@@ -30,6 +31,7 @@ app.use("/api/seed",seedRouter);
 app.use("/api/events",EventRouter);
 app.use("/api/categories",CategoryRouter);
 app.use("/api/payments",PaymentRoutes);
+app.use("/api/users",UserRouter);
 app.listen(port,()=>{
     console.log("Escuchando en el puerto: ", port);
 })

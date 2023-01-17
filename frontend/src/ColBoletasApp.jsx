@@ -7,11 +7,15 @@ import FavoritesScreen from './screens/FavoritesScreen'
 import EventDetails from './screens/EventDetails'
 import UserTickets from './screens/UserTickets'
 import CodeQRReader from './screens/CodeQRReader'
+import LoginScreen from './screens/LoginScreen'
+import RegisterScreen from './screens/RegisterScreen'
 const ColBoletasApp=()=>{
     return(
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<HomeScreen/>} />
+                <Route path='/login' element={<LoginScreen/>}/>
+                <Route path='/register' element={<RegisterScreen/>}/>
                 <Route path='/categories/:categoryId' element={<CategoriesScreen/>}/>
                 <Route path='/popular' element={<PopularScreen/>} />
                 <Route path='/search/:searchInput' element={<SearchScreen/>} />

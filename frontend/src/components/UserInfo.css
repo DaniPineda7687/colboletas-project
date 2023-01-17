@@ -18,3 +18,7 @@
     object-fit: cover;
     border-radius: 50%;
 }
+
+.main-info-user{
+    margin-bottom: 1.2rem;
+}

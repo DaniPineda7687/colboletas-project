@@ -26,16 +26,28 @@ const appReducer=(state,action)=>{
                     favorites:[...state.favorites,payload.favorite]
                 }
             }
-            case "ADD_PURCHASE":
-                return {
-                    ...state,
-                    purchases:[...state.purchases,payload.purchase],
-                }
-            
            case "USER_LOGIN":
+                localStorage.setItem("userInfo",JSON.stringify(
+                    {
+                        ...state,
+                        userData:[...payload.userData],
+                    }
+                ))
                 return {
                     ...state,
                     userData:[...payload.userData],
+                }
+                
+            case "USER_LOGOUT":
+                localStorage.setItem("userInfo",JSON.stringify(
+                    {
+                        ...state,
+                        userData:[],
+                    }
+                ))
+                return{
+                    ...state,
+                    userData:[]
                 }
         default:
             throw new Error(`Error ${type} is not defined`)

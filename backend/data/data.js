@@ -2,12 +2,24 @@
 //API - getUser
 export const usersInfo=[
     {
-        name:"Daniel Pineda",
+        name:"Daniel Santiago",
+        lastName:"Rodriguez Pineda",
+        username:"DaniPineda87",
         image:"https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg",
         email:"danielspineda87@gmail.com",
-        password:"123456",
+        password:"12345678",
         birthday:new Date(2002,10,25),
-
+        isAdmin:false,
+    },
+    {
+        name:"Juan Camilo",
+        lastName:"Fernandez Buitrago",
+        username:"JuanCamilo02",
+        image:"https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg",
+        email:"juanca02@gmail.com",
+        password:"12345678",
+        birthday:new Date(2002,5,13),
+        isAdmin:true,
     }
 ]
 

@@ -5,6 +5,7 @@ const paymentsSchema = moongose.Schema({
     userId:String,
     paymentId:String,
     paymentRef:String,
+    claimed:Boolean,
 }); 
 
 const Payments = moongose.model("Payments",paymentsSchema);
