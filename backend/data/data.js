@@ -86,6 +86,7 @@ export const eventsUpload=[
         hour:"8:00PM",
         minimAge:18,
         ticketPrice:25000,
+        coords:[10.481159757798679, -73.25023377652111]
     },
     {
         name:"GABY - MEDELLÍN",
@@ -101,7 +102,59 @@ export const eventsUpload=[
         city:"Medellín",
         hour:"9:00PM",
         minimAge:8,
-        ticketPrice:34000
+        ticketPrice:34000,
+        coords:[6.234592787771803, -75.61478365895367]
+    },
+    {
+        name:"Ruben - VILLAVICENCIO",
+        organizer:"Miryam Lucia Forero Giraldo",
+        date:new Date(2023,2,2),
+        participants:1000,
+        totalTickets:1200,
+        location:"Cl. 31b, Medellín, Belén",
+        placeId:"ChIJ3wE7lY0pRI4RKVbUlSJlLhk",
+        category:["1","4"],
+        image:"https://tuboleta.com/imagenes/636d6bdbcad1f.jpg",
+        place:"Teatro de la Universidad de Medellín",
+        city:"Medellín",
+        hour:"9:00PM",
+        minimAge:8,
+        ticketPrice:34000,
+        coords:[4.140219569485222, -73.62774947387955]
+    },
+    {
+        name:"Ruben - VILLAVICENCIO2",
+        organizer:"Miryam Lucia Forero Giraldo",
+        date:new Date(2023,2,2),
+        participants:1000,
+        totalTickets:1200,
+        location:"Cl. 31b, Medellín, Belén",
+        placeId:"ChIJ3wE7lY0pRI4RKVbUlSJlLhk",
+        category:["1","4"],
+        image:"https://tuboleta.com/imagenes/636d6bdbcad1f.jpg",
+        place:"Teatro de la Universidad de Medellín",
+        city:"Medellín",
+        hour:"9:00PM",
+        minimAge:8,
+        ticketPrice:34000,
+        coords:[4.1430040861337005, -73.62677841051742]
+    },
+    {
+        name:"Ruben - VILLAVICENCIO3",
+        organizer:"Miryam Lucia Forero Giraldo",
+        date:new Date(2023,2,2),
+        participants:1000,
+        totalTickets:1200,
+        location:"Cl. 31b, Medellín, Belén",
+        placeId:"ChIJ3wE7lY0pRI4RKVbUlSJlLhk",
+        category:["1","4"],
+        image:"https://tuboleta.com/imagenes/636d6bdbcad1f.jpg",
+        place:"Teatro de la Universidad de Medellín",
+        city:"Medellín",
+        hour:"9:00PM",
+        minimAge:8,
+        ticketPrice:34000,
+        coords:[4.149299478934906, -73.63114819564701]
     },
     {
         name:"HÉROES DEL SILENCIO Y CAIFANES • JAGUARES FILARMÓNICO / EL RITUAL DEL SILENCIO",
@@ -117,7 +170,8 @@ export const eventsUpload=[
         city:"Medellín",
         hour:"7:30PM",
         minimAge:10,
-        ticketPrice:45000
+        ticketPrice:45000,
+        coords:[6.243269621505644, -75.57752790227538]
     },
     {
         name:"ANDRES CEPEDA - MEDELLÍN",
@@ -133,7 +187,8 @@ export const eventsUpload=[
         city:"Medellín",
         hour:"8:00PM",
         minimAge:7,
-        ticketPrice:85000
+        ticketPrice:85000,
+        coords:[6.234582260868288, -75.61478850227547]
     },
     {
         name:"BOYACÁ CHICÓ FÚTBOL CLUB S.A - ABONOS 2023",
@@ -149,7 +204,8 @@ export const eventsUpload=[
         city:"Tunja",
         hour:"8:00PM",
         minimAge:5,
-        ticketPrice:32000
+        ticketPrice:32000,
+        coords:[5.5421312496592705, -73.35335270837322]
     },
     {
         name:"DISCIPLINAR SIN LASTIMAR",
@@ -165,6 +221,7 @@ export const eventsUpload=[
         city:"Bogotá",
         hour:"9:00PM",
         minimAge:18,
-        ticketPrice:38000
+        ticketPrice:38000,
+        coords:[5.521944491731771, -73.36110654529934]
     },
 ]

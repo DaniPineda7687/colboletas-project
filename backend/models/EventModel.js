@@ -15,6 +15,7 @@ const eventSchema=mongoose.Schema({
     hour:String,
     minimAge:Number,
     ticketPrice:Number,
+    coords:Array
 })
 
 const Events = mongoose.model("Events",eventSchema);
